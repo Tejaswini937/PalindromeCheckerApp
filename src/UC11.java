@@ -1,32 +1,29 @@
 import java.util.Scanner;
 
-class PalindromeChecker {
+public class UC11 {
 
-    boolean checkPalindrome(String str) {
-        int start = 0;
-        int end = str.length() - 1;
+    boolean checkPalindrome(String s) {
+        int i = 0;
+        int j = s.length() - 1;
 
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end))
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j))
                 return false;
-            start++;
-            end--;
+            i++;
+            j--;
         }
         return true;
     }
-}
-
-public class UC11 {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a string:");
+        System.out.println("Enter string:");
         String input = sc.nextLine();
 
-        PalindromeChecker pc = new PalindromeChecker();
+        UC11 obj = new UC11();
 
-        if (pc.checkPalindrome(input))
+        if (obj.checkPalindrome(input))
             System.out.println("Palindrome");
         else
             System.out.println("Not Palindrome");
